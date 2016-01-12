@@ -22,10 +22,11 @@ This repository is for the scoreboard used to run MITRE capture the flag competi
 6. Run `git push origin master`
 7. Submit a pull request
 
-### Using included Dockerfile for development
+### (Optional) Using included Dockerfile for development
 
 This repository features a Dockerfile that is used strictly for local development purposes. It provides the user with a consistant local environment to develop on no matter their OS. In order to use it:
 
+0. These instructions assume you already have Docker configured and working on your system.
 1. Clone repository locally.
 2. Run `docker build -t mitre-cyber-academy/ctf-scoreboard-dev .` from the root of the repository to build the image.
 3. Run ``docker run -d --name ctf-scoreboard-dev -v `pwd`:/src/ctf-scoreboard -p 3000:3000 mitre-cyber-academy/ctf-scoreboard-dev`` to start the image.
