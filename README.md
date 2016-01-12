@@ -29,8 +29,9 @@ This repository features a Dockerfile that is used strictly for local developmen
 0. These instructions assume you already have Docker configured and working on your system.
 1. Clone repository locally.
 2. Run `docker build -t mitre-cyber-academy/ctf-scoreboard-dev .` from the root of the repository to build the image.
-3. Run ``docker run -d --name ctf-scoreboard-dev -v `pwd`:/src/ctf-scoreboard -p 3000:3000 mitre-cyber-academy/ctf-scoreboard-dev`` to start the image.
-4. Run `docker exec ctf-scoreboard-dev bundle exec rake db:migrate`. This should only have to be run once. Once the db is migrated it will be stored separate from the container.
-4. Run `docker exec ctf-scoreboard-dev bundle exec rake db:seed`. This should also only have to be run once as it will populate your host directory with the needed changes.
-5. Navigate in your browser to your Docker host at port 3000. The scoreboard will display.
-6. Make your changes on your local system. The docker container will stay in sync with your local filesystem automatically and changes will show up in the browser.
+3. Copy `config/secrets.yml.template` to `config/secrets.yml` in the local clone on your system.
+4. Run ``docker run -d --name ctf-scoreboard-dev -v `pwd`:/src/ctf-scoreboard -p 3000:3000 mitre-cyber-academy/ctf-scoreboard-dev`` to start the image.
+5. Run `docker exec ctf-scoreboard-dev bundle exec rake db:migrate` This should only have to be run once. Once the db is migrated it will be stored separate from the container.
+6. Run `docker exec ctf-scoreboard-dev bundle exec rake db:seed` This should also only have to be run once as it will populate your host directory with the needed changes.
+7. Navigate in your browser to your Docker host at port 3000. The scoreboard will display.
+8. Make your changes on your local system. The docker container will stay in sync with your local filesystem automatically and changes will show up in the browser.
